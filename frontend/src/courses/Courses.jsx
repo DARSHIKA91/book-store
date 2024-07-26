@@ -1,15 +1,17 @@
-import React, { createContext, useContext, useState } from "react";
-
-export const AuthContext = createContext();
-export default function AuthProvider({ children }) {
-  const initialAuthUser = localStorage.getItem("Users");
-  const [authUser, setAuthUser] = useState(
-    initialAuthUser ? JSON.parse(initialAuthUser) : undefined
-  );
+import React from "react";
+import Navbar from "../components/Navbar";
+import Course from './../components/Course/'
+import Footer from "../components/Footer";
+function Courses() {
   return (
-    <AuthContext.Provider value={[authUser, setAuthUser]}>
-      {children}
-    </AuthContext.Provider>
+    <>
+      <Navbar />
+      <div className=" min-h-screen">
+        <Course />
+      </div>
+      <Footer />
+    </>
   );
 }
-export const useAuth = () => useContext(AuthContext);
+
+export default Courses;
