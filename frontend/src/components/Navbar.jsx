@@ -47,9 +47,6 @@ function Navbar() {
       <li>
         <a href="/contact">Contact</a>
       </li>
-      <li>
-        <a>Addbooks</a>
-      </li>
     </>
   );
   return (

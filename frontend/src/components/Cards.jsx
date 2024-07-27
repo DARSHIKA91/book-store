@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Cards({ item }) {
   return (
     <>
+    <Link to="/about">
       <div className="mt-4 my-3 p-3">
         <div className="card w-92 bg-base-100 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border">
           <figure>
@@ -23,6 +25,7 @@ function Cards({ item }) {
           </div>
         </div>
       </div>
+      </Link>
     </>
   );
 }
