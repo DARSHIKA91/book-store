@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import books from './../../public/books.jpeg'
+import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -28,7 +29,9 @@ function About() {
                 Thank you for being part of our community of book lovers. We look forward to embarking on countless literary journeys with you!
               </p>
             </div>
+            <Link to='/course'>
             <button className="btn mt-6 btn-secondary">Get Started</button>
+            </Link>
           </div>
           <div className=" order-1 w-full mt-60 md:w-1/2 rotate-6  animate-bounce">
             <img
