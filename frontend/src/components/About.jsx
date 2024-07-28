@@ -9,7 +9,7 @@ function About() {
     <>
       <Navbar />
       <div>
-        <div className=" max-w-screen-2xl container mx-auto md:px-20 px-2 flex flex-col md:flex-row my-10">
+        <div className=" max-w-screen-2xl container mx-auto md:px-20 px-2 flex flex-col md:flex-row my-10 ">
           <div className="w-full order-2 md:order-1 md:w-1/2 mt-10 md:mt-20">
             <div className="space-y-5">
               <h1 className="text-2xl md:text-4xl font-bold">
