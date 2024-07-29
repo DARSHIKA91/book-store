@@ -14,18 +14,18 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 4001;
-const URI = process.env.MongoDBURI;
 
 // connect to mongoDB
-try {
-    mongoose.connect(URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-    console.log("Connected to mongoDB");
-} catch (error) {
-    console.log("Error: ", error);
+const dbConnection = async ()=>{
+    const conn = await mongoose.connect(process.env.MongoDBURI )
+    if(conn){
+        console.log("Mongodb connected")
+    }
+    else{
+        console.log("Mongodb not connected")
+    }
 }
+ dbConnection();
 
 app.get('/', (req, res) => {
     res.json({
