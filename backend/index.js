@@ -29,7 +29,7 @@ try {
 
 app.get('/', (req, res) => {
     res.json({
-        message: `Welcome to Expense Tracker API`
+        message: `Welcome to book-store API`
     })
 })
 
