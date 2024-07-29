@@ -13,8 +13,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-
 const PORT = process.env.PORT || 4001;
 const URI = process.env.MongoDBURI;
 
@@ -28,6 +26,12 @@ try {
 } catch (error) {
     console.log("Error: ", error);
 }
+
+app.get('/', (req, res) => {
+    res.json({
+        message: `Welcome to Expense Tracker API`
+    })
+})
 
 // defining routes
 app.use("/book", bookRoute);
