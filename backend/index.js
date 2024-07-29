@@ -28,11 +28,6 @@ try {
     console.log("Error: ", error);
 }
 
-app.get('/', (req, res) => {
-    res.json({
-        message: `Welcome to Book-Store API`
-    })
-})
 
 // defining routes
 app.use("/book", bookRoute);
