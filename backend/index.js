@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 import cors from "cors";
+import path from "path";
 
 import bookRoute from "./route/book.route.js";
 import userRoute from "./route/user.route.js";
@@ -37,6 +38,14 @@ app.get('/', (req, res) => {
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
 app.use("/contact", contactRoute);
+
+if(process.env.NODE_ENV === "production"){
+    const dirPath = path.resolve();
+    app.use(express.static("Frontend/dist"));
+    app.get("*",(req,res) => {
+        res.sendFile(path.resolve(dirPath, "Frontend","dist","index.html"));
+    })
+}
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
