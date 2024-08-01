@@ -19,7 +19,7 @@ function Contact() {
             message: data.message
         }
 
-        await axios.post("http://localhost:4000/contact/contact", contactInfo)
+        await axios.post("https://book-store-67mh.onrender.com/contact/contact", contactInfo)
             .then((res) => {
                 console.log(res.data)
                 if (res.data) {
